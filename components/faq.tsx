@@ -1,24 +1,28 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { IconPlus } from "@tabler/icons-react";
+import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    question: "What is the purpose of this website?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor massa vel ultrices commodo."
+    question: "¿Cómo puedo solicitar un presupuesto?",
+    answer: "Puedes utilizar nuestra calculadora de rutas en la página principal para obtener una estimación inmediata. Para presupuestos más complejos o servicios especiales, contáctanos directamente a través del formulario o por teléfono."
   },
   {
-    question: "What is the purpose of this website?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor massa vel ultrices commodo."
+    question: "¿Con cuánta antelación debo reservar?",
+    answer: "Recomendamos reservar con al menos 2 semanas de antelación para garantizar la disponibilidad, especialmente en temporada alta (verano y navidad). Sin embargo, intentamos acomodar solicitudes de última hora siempre que sea posible."
   },
   {
-    question: "What is the purpose of this website?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor massa vel ultrices commodo."
+    question: "¿Qué medidas de seguridad tienen los autobuses?",
+    answer: "Toda nuestra flota cumple con las normativas europeas más estrictas. Incluyen cinturones de seguridad en todos los asientos, sistemas de frenado ABS/ASR, arcos de seguridad antivuelco y mantenimiento preventivo riguroso."
   },
   {
-    question: "What is the purpose of this website?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor massa vel ultrices commodo."
+    question: "¿Se permiten mascotas a bordo?",
+    answer: "Sí, permitimos mascotas siempre que viajen en su transportín homologado en el maletero del autobús, garantizando su seguridad y la comodidad del resto de pasajeros. Los perros guía pueden viajar en cabina."
+  },
+  {
+    question: "¿Ofrecen servicios para personas con movilidad reducida?",
+    answer: "Disponemos de vehículos adaptados con plataformas elevadoras y espacios reservados. Por favor, indícalo al momento de hacer la reserva para asignar el vehículo adecuado."
   }
 ];
 
@@ -26,72 +30,40 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="w-full py-20">
-      <div className="max-w-4xl mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-semibold mb-4">
-            Frequently <span className="text-[#FF6B2B]">Asked</span> Questions
+    <section className="w-full py-24 bg-gray-50" id="faq">
+      <div className="max-w-3xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <span className="text-orange-600 font-semibold tracking-wider text-sm uppercase">Dudas Frecuentes</span>
+          <h2 className="text-3xl md:text-5xl font-bold mt-2 text-gray-900">
+            Preguntas <span className="text-orange-600">Frecuentes</span>
           </h2>
-          <p className="text-neutral-600 max-w-3xl mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor massa vel ultrices commodo. 
-            Suspendisse varius risus scelerisque, accumsan felis vel, sodales erat. Donec tristi
-          </p>
         </div>
 
-        {/* FAQ Items */}
-        <div className="space-y-4 rounded-[22px] bg-[#DCDCDC] p-4">
+        <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="rounded-[17px] border border-[#EBEBEB] bg-gradient-to-b from-[#F6F6F6] via-[#FDFDFD] to-[#F6F6F6] shadow-[0px_95px_27px_0px_rgba(0,0,0,0.00),_0px_61px_24px_0px_rgba(0,0,0,0.03),_0px_34px_21px_0px_rgba(0,0,0,0.11),_0px_15px_15px_0px_rgba(0,0,0,0.19),_0px_4px_8px_0px_rgba(0,0,0,0.22)] overflow-hidden"
+              className="bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-lg hover:border-orange-200"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-5 flex items-center gap-2 text-left"
+                className="w-full px-8 py-6 flex items-center justify-between gap-4 text-left"
               >
-                <motion.div
-                  initial={false}
-                  animate={{ rotate: openIndex === index ? 45 : 0 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                >
-                  <IconPlus size={20} className="text-[#FF6B2B]" />
-                </motion.div>
-                <span className="text-lg text-neutral-800">{faq.question}</span>
+                <span className="text-lg font-medium text-gray-900">{faq.question}</span>
+                <span className={`flex-shrink-0 text-orange-500 transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""}`}>
+                  {openIndex === index ? <Minus className="w-6 h-6" /> : <Plus className="w-6 h-6" />}
+                </span>
               </button>
               <AnimatePresence mode="sync">
                 {openIndex === index && (
                   <motion.div
-                    key={`content-${index}`}
-                    initial="collapsed"
-                    animate="open"
-                    exit="collapsed"
-                    variants={{
-                      open: { 
-                        height: "auto",
-                        opacity: 1,
-                        transition: { 
-                          type: "spring",
-                          stiffness: 400,
-                          damping: 40,
-                          mass: 1
-                        }
-                      },
-                      collapsed: { 
-                        height: 0,
-                        opacity: 0,
-                        transition: {
-                          type: "spring",
-                          stiffness: 400,
-                          damping: 40,
-                          mass: 1
-                        }
-                      }
-                    }}
-                    className="px-6 overflow-hidden"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    <div className="pb-5">
-                      <p className="text-neutral-600">{faq.answer}</p>
+                    <div className="px-8 pb-6 text-gray-600 leading-relaxed">
+                      {faq.answer}
                     </div>
                   </motion.div>
                 )}

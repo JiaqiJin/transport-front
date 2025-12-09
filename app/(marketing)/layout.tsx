@@ -8,9 +8,9 @@ import { Footer } from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Startup Landing | Aceternity Template",
+  title: "Transportes Premium | Alquiler de Autobuses y Minibuses",
   description:
-    "Startup landing is a simple one page landing page for startups and agencies. Built with Next.js, Tailwind CSS, TypeScript and framer motion.",
+    "Servicio líder de transporte de pasajeros en España. Alquiler de autobuses para bodas, empresas, turismo y transporte escolar. Solicita tu presupuesto online.",
 };
 
 export default function RootLayout({
@@ -19,10 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={cn("antialiased", inter.className)}>
+    <html lang="es" suppressHydrationWarning>
+      <body className={cn("antialiased bg-white text-gray-900", inter.className)}>
         <Navbar />
+        <main className="min-h-screen">
           {children}
+        </main>
         <Footer />
       </body>
     </html>

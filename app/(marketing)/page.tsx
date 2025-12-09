@@ -1,25 +1,22 @@
 import CTA from "@/components/cta";
 import { FAQ } from "@/components/faq";
-import { Features } from "@/components/features";
-import { Features2 } from "@/components/features2";
-import Features3 from "@/components/features3";
+import { Services } from "@/components/services";
+import { RouteCalculator } from "@/components/route-calculator";
+import { TourGuides } from "@/components/tour-guides";
 import { Hero } from "@/components/hero";
-import { LogoCloud } from "@/components/logos-cloud";
-import Pricing from "@/components/pricing";
 import { Testimonials } from "@/components/testimonials";
+
 
 export default function Home() {
   return (
-    <div>
+    <main className="min-h-screen">
       <Hero />
-      <LogoCloud />
-      <Features />
-      <Features2 />
-      <Features3 />
-      <Pricing />
+      <RouteCalculator />
+      <Services />
+      <TourGuides />
       <Testimonials />
       <FAQ />
       <CTA />
-    </div>
+    </main>
   );
 }
