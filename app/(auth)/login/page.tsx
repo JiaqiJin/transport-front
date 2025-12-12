@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/components/button";
+import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { PasswordInput } from "@/components/ui/password-input";
 
@@ -50,7 +50,7 @@ export default function LoginPage() {
         <div className="mb-8">
           <Logo />
         </div>
-        
+
         <div className="py-10">
           <h1 className="text-4xl leading-tight font-semibold">
             Effortless Call{" "}
@@ -59,7 +59,7 @@ export default function LoginPage() {
             That Makes your Life{" "}
             <span className="text-orange-500">Easier</span>
           </h1>
-          
+
           <p className="mt-6 text-gray-600 text-lg">
             Schedule calls with a single click. Go from no calls to your calendar filled with calls
             with ease using Shape AI, your favourite scheduling software.
@@ -141,7 +141,6 @@ export default function LoginPage() {
 
               {/* Sign In Button */}
               <Button
-                as="button"
                 type="submit"
                 className="w-full bg-[linear-gradient(195deg,_#FFA756_17.78%,_#EE602C_75.71%)] hover:opacity-90 transition-opacity"
               >
@@ -150,7 +149,6 @@ export default function LoginPage() {
               <hr className="border-gray-200" />
               {/* Google Sign In */}
               <Button
-                as="button"
                 type="button"
                 className="w-full gap-2 rounded-[6px] bg-[linear-gradient(181deg,_#5E5E5E_18.12%,_#000_99.57%)] hover:opacity-90 transition-opacity"
               >
@@ -182,39 +180,39 @@ const MapView = () => {
 
     return map.getSVG({
       radius: 0.15,
-      color: "#000000", 
+      color: "#000000",
       shape: "circle",
     });
   }, []);
 
   const people = [
-    { 
-      name: "Kishore", 
-      x: "10%", 
+    {
+      name: "Kishore",
+      x: "10%",
       y: "4%",
       photo: "/images/kishore_gunnam.jpg"
     },
-    { 
-      name: "John", 
-      x: "65%", 
+    {
+      name: "John",
+      x: "65%",
       y: "35%",
       photo: "/images/person3.png"
     },
-    { 
-      name: "Manu", 
-      x: "50%", 
+    {
+      name: "Manu",
+      x: "50%",
       y: "20%",
       photo: "/images/manu_arora.jpg"
     },
-    { 
-      name: "James", 
-      x: "80%", 
+    {
+      name: "James",
+      x: "80%",
       y: "25%",
       photo: "/images/person4.png"
     },
-    { 
-      name: "Emily", 
-      x: "30%", 
+    {
+      name: "Emily",
+      x: "30%",
       y: "45%",
       photo: "/images/person5.png"
     }
@@ -265,10 +263,10 @@ const MapView = () => {
 
 
 const GoogleIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <path d="M19.8684 10.2281C19.8693 9.54663 19.8113 8.8664 19.695 8.19482H10.1992V12.046H15.638C15.5267 12.6611 15.2911 13.2475 14.9455 13.7697C14.5999 14.292 14.1513 14.7393 13.6269 15.0848V17.5846H16.8728C18.7734 15.8444 19.8684 13.271 19.8684 10.2281Z" fill="#4285F4"/>
-        <path d="M10.1997 19.9998C12.9169 19.9998 15.2049 19.1137 16.8733 17.586L13.6274 15.0861C12.7239 15.6944 11.5604 16.0416 10.1997 16.0416C7.57328 16.0416 5.34408 14.2834 4.54693 11.9141H1.20312V14.4903C2.0412 16.1465 3.32629 17.5387 4.91494 18.5116C6.50358 19.4844 8.33324 19.9997 10.1997 19.9998Z" fill="#34A853"/>
-        <path d="M4.54686 11.9141C4.12543 10.6726 4.12543 9.32806 4.54686 8.08651V5.51025H1.20305C0.498032 6.90345 0.130859 8.44108 0.130859 10.0003C0.130859 11.5595 0.498032 13.0972 1.20305 14.4904L4.54686 11.9141Z" fill="#FBBC04"/>
-        <path d="M10.1997 3.95879C11.6356 3.93549 13.0231 4.47429 14.0623 5.45872L16.9362 2.60469C15.1139 0.904883 12.6996 -0.0283412 10.1997 0.000656061C8.33324 0.000740536 6.50358 0.515984 4.91494 1.48886C3.32629 2.46174 2.0412 3.85397 1.20312 5.5101L4.54693 8.08636C5.34408 5.71704 7.57328 3.95879 10.1997 3.95879Z" fill="#EA4335"/>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+    <path d="M19.8684 10.2281C19.8693 9.54663 19.8113 8.8664 19.695 8.19482H10.1992V12.046H15.638C15.5267 12.6611 15.2911 13.2475 14.9455 13.7697C14.5999 14.292 14.1513 14.7393 13.6269 15.0848V17.5846H16.8728C18.7734 15.8444 19.8684 13.271 19.8684 10.2281Z" fill="#4285F4" />
+    <path d="M10.1997 19.9998C12.9169 19.9998 15.2049 19.1137 16.8733 17.586L13.6274 15.0861C12.7239 15.6944 11.5604 16.0416 10.1997 16.0416C7.57328 16.0416 5.34408 14.2834 4.54693 11.9141H1.20312V14.4903C2.0412 16.1465 3.32629 17.5387 4.91494 18.5116C6.50358 19.4844 8.33324 19.9997 10.1997 19.9998Z" fill="#34A853" />
+    <path d="M4.54686 11.9141C4.12543 10.6726 4.12543 9.32806 4.54686 8.08651V5.51025H1.20305C0.498032 6.90345 0.130859 8.44108 0.130859 10.0003C0.130859 11.5595 0.498032 13.0972 1.20305 14.4904L4.54686 11.9141Z" fill="#FBBC04" />
+    <path d="M10.1997 3.95879C11.6356 3.93549 13.0231 4.47429 14.0623 5.45872L16.9362 2.60469C15.1139 0.904883 12.6996 -0.0283412 10.1997 0.000656061C8.33324 0.000740536 6.50358 0.515984 4.91494 1.48886C3.32629 2.46174 2.0412 3.85397 1.20312 5.5101L4.54693 8.08636C5.34408 5.71704 7.57328 3.95879 10.1997 3.95879Z" fill="#EA4335" />
+  </svg>
 )

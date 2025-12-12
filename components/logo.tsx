@@ -20,3 +20,7 @@ export const Logo = ({ className }: { className?: string }) => {
     </Link>
   );
 };
+
+export const LogoIcon = ({ className }: { className?: string }) => {
+  return <BusFront className={cn("text-black dark:text-white", className)} />;
+};

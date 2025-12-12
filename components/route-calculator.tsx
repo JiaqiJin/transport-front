@@ -2,11 +2,10 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Calendar, Users, Calculator, ArrowRight, Euro } from "lucide-react";
+import { MapPin, Calendar, Users, Calculator, ArrowRight } from "lucide-react";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Button } from "./ui/button";
-import { cn } from "@/lib/utils";
 
 export function RouteCalculator() {
     const [origin, setOrigin] = useState("");

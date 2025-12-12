@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "./button";
+import { Button } from "./ui/button";
 
 const PricingCard = ({
   tier,
@@ -14,11 +14,10 @@ const PricingCard = ({
 }) => {
   return (
     <div
-      className={`relative rounded-[37px] flex flex-col gap-3 p-4 ${
-        isHighlighted
+      className={`relative rounded-[37px] flex flex-col gap-3 p-4 ${isHighlighted
           ? "border border-white bg-gradient-to-b from-[#FFA756] via-[#F68441] to-[#EE602C]"
           : "bg-[#DCDCDC]"
-      }`}
+        }`}
     >
       <div className="space-y-8 p-4 bg-[#F5F5F5] rounded-[28px] shadow-[0px_95px_27px_0px_rgba(0,0,0,0.00),_0px_61px_24px_0px_rgba(0,0,0,0.03),_0px_34px_21px_0px_rgba(0,0,0,0.11),_0px_15px_15px_0px_rgba(0,0,0,0.19),_0px_4px_8px_0px_rgba(0,0,0,0.22)] pb-20 px-4">
         <div className="flex flex-col">

@@ -411,7 +411,7 @@ const OrbitingIcons = ({
               rotate: {
                 duration: speed,
                 repeat: Infinity,
-                ease: "linear",
+                ease: "linear" as const,
               },
             },
             counterRotation: {
@@ -425,7 +425,7 @@ const OrbitingIcons = ({
               transition: {
                 duration: speed,
                 repeat: Infinity,
-                ease: "linear",
+                ease: "linear" as const,
               },
             },
           },

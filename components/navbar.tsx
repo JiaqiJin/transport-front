@@ -31,7 +31,7 @@ export const Navbar = () => {
     },
   ];
 
-  const [visible, setVisible] = useState(true);
+  const [visible] = useState(true);
   const [open, setOpen] = useState(false);
 
   return (
@@ -100,7 +100,7 @@ const MobileNav = ({
 }: {
   navItems: { name: string; link: string }[];
   open: boolean;
-  setOpen: any;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   return (
     <div className="flex flex-col md:hidden">
